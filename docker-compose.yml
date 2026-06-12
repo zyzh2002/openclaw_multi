@@ -1,0 +1,104 @@
+services:
+  openclaw-1:
+    image: ${OPENCLAW_IMAGE:-ghcr.io/openclaw/openclaw:latest}
+    container_name: openclaw-1
+    restart: unless-stopped
+    ports:
+      - "18789:18789"
+    volumes:
+      - ./instances/instance-1/openclaw.json:/home/node/.openclaw/openclaw.json:ro
+      - ./instances/instance-1/workspace:/home/node/.openclaw/workspace
+    environment:
+      - OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX:-1}
+      - HTTP_PROXY=${HTTP_PROXY_URL:-}
+      - HTTPS_PROXY=${HTTPS_PROXY_URL:-}
+      - ALL_PROXY=${ALL_PROXY_URL:-}
+      - NO_PROXY=localhost,127.0.0.1,host.docker.internal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 2G
+    networks:
+      - openclaw-net
+
+  openclaw-2:
+    image: ${OPENCLAW_IMAGE:-ghcr.io/openclaw/openclaw:latest}
+    container_name: openclaw-2
+    restart: unless-stopped
+    ports:
+      - "18790:18789"
+    volumes:
+      - ./instances/instance-2/openclaw.json:/home/node/.openclaw/openclaw.json:ro
+      - ./instances/instance-2/workspace:/home/node/.openclaw/workspace
+    environment:
+      - OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX:-1}
+      - HTTP_PROXY=${HTTP_PROXY_URL:-}
+      - HTTPS_PROXY=${HTTPS_PROXY_URL:-}
+      - ALL_PROXY=${ALL_PROXY_URL:-}
+      - NO_PROXY=localhost,127.0.0.1,host.docker.internal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 2G
+    networks:
+      - openclaw-net
+
+  openclaw-3:
+    image: ${OPENCLAW_IMAGE:-ghcr.io/openclaw/openclaw:latest}
+    container_name: openclaw-3
+    restart: unless-stopped
+    ports:
+      - "18791:18789"
+    volumes:
+      - ./instances/instance-3/openclaw.json:/home/node/.openclaw/openclaw.json:ro
+      - ./instances/instance-3/workspace:/home/node/.openclaw/workspace
+    environment:
+      - OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX:-1}
+      - HTTP_PROXY=${HTTP_PROXY_URL:-}
+      - HTTPS_PROXY=${HTTPS_PROXY_URL:-}
+      - ALL_PROXY=${ALL_PROXY_URL:-}
+      - NO_PROXY=localhost,127.0.0.1,host.docker.internal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 2G
+    networks:
+      - openclaw-net
+
+  openclaw-4:
+    image: ${OPENCLAW_IMAGE:-ghcr.io/openclaw/openclaw:latest}
+    container_name: openclaw-4
+    restart: unless-stopped
+    ports:
+      - "18792:18789"
+    volumes:
+      - ./instances/instance-4/openclaw.json:/home/node/.openclaw/openclaw.json:ro
+      - ./instances/instance-4/workspace:/home/node/.openclaw/workspace
+    environment:
+      - OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX:-1}
+      - HTTP_PROXY=${HTTP_PROXY_URL:-}
+      - HTTPS_PROXY=${HTTPS_PROXY_URL:-}
+      - ALL_PROXY=${ALL_PROXY_URL:-}
+      - NO_PROXY=localhost,127.0.0.1,host.docker.internal
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+          memory: 2G
+    networks:
+      - openclaw-net
+
+networks:
+  openclaw-net:
+    driver: bridge

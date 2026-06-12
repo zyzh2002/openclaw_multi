@@ -1,0 +1,19 @@
+# Linux + 沙箱模式追加配置：挂载 Docker socket 用于创建 Agent 子容器
+# 启动: docker compose -f docker-compose.yml -f docker-compose.linux.yml up -d
+
+services:
+  openclaw-1:
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  openclaw-2:
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  openclaw-3:
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  openclaw-4:
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

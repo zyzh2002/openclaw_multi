@@ -1,0 +1,5 @@
+.env
+instances/*/workspace/*
+!instances/*/workspace/.gitkeep
+docker-compose.override.yml
+*.log

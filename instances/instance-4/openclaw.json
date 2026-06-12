@@ -1,0 +1,23 @@
+{
+  "gateway": {
+    "port": 18789,
+    "bind": "0.0.0.0",
+    "auth": {}
+  },
+  "agents": {
+    "defaults": {
+      "workspace": "/home/node/.openclaw/workspace",
+      "model": {
+        "primary": "provider/model-name",
+        "fallbacks": []
+      }
+    }
+  },
+  "auth": {
+    "profiles": {}
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {}
+  }
+}

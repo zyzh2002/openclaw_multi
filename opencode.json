@@ -1,0 +1,21 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "EXA_AI": {
+      "type": "remote",
+      "url": "https://tokenflux.ai/v1/mcps/EXA_AI/mcp",
+      "enabled": true,
+      "headers": {
+        "X-API-KEY": "8d120197-0c36-4887-b529-985aaf4f64bd"
+      }
+    },
+    "AliyunBailianMCP_WebSearch": {
+      "type": "remote",
+      "url": "https://dashscope.aliyuncs.com/api/v1/mcps/WebSearch/mcp",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer sk-8f2dcfa5260d4a47a8793705ca407d01"
+      }
+    }
+  }
+}
