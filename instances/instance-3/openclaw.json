@@ -3,7 +3,10 @@
     "port": 18789,
     "bind": "lan",
     "mode": "local",
-    "auth": {}
+    "auth": {
+      "mode": "token",
+      "token": "openclaw123"
+    }
   },
   "agents": {
     "defaults": {
