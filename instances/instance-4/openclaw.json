@@ -8,6 +8,12 @@
       "token": "openclaw123"
     }
   },
+  "skills": {
+    "load": {
+      "extraDirs": ["/home/node/.openclaw/shared-skills"],
+      "watch": true
+    }
+  },
   "agents": {
     "defaults": {
       "workspace": "/home/node/.openclaw/workspace",

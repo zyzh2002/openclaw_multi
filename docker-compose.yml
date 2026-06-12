@@ -8,6 +8,7 @@ services:
     volumes:
       - ./instances/instance-1/openclaw.json:/home/node/.openclaw/openclaw.json:ro
       - ./instances/instance-1/workspace:/home/node/.openclaw/workspace
+      - ./shared-skills:/home/node/.openclaw/shared-skills:ro
     environment:
       - OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX:-1}
       - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN_1:-openclaw-1-token}
@@ -37,6 +38,7 @@ services:
     volumes:
       - ./instances/instance-2/openclaw.json:/home/node/.openclaw/openclaw.json:ro
       - ./instances/instance-2/workspace:/home/node/.openclaw/workspace
+      - ./shared-skills:/home/node/.openclaw/shared-skills:ro
     environment:
       - OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX:-1}
       - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN_2:-openclaw-2-token}
@@ -66,6 +68,7 @@ services:
     volumes:
       - ./instances/instance-3/openclaw.json:/home/node/.openclaw/openclaw.json:ro
       - ./instances/instance-3/workspace:/home/node/.openclaw/workspace
+      - ./shared-skills:/home/node/.openclaw/shared-skills:ro
     environment:
       - OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX:-1}
       - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN_3:-openclaw-3-token}
@@ -95,6 +98,7 @@ services:
     volumes:
       - ./instances/instance-4/openclaw.json:/home/node/.openclaw/openclaw.json:ro
       - ./instances/instance-4/workspace:/home/node/.openclaw/workspace
+      - ./shared-skills:/home/node/.openclaw/shared-skills:ro
     environment:
       - OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX:-1}
       - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN_4:-openclaw-4-token}
