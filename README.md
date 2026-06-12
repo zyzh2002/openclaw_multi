@@ -63,7 +63,7 @@ docker compose -f docker-compose.yml -f docker-compose.linux.yml up -d
 
 ### 5. 访问 Web 面板
 
-Web 面板无需认证，直接访问：
+统一 Token：`openclaw123`
 
 | 实例 | 地址 |
 |------|------|
@@ -79,9 +79,12 @@ openclaw_multi/
 ├── .env.example              # 环境变量模板（复制为 .env）
 ├── docker-compose.yml        # 基础编排（跨平台通用）
 ├── docker-compose.linux.yml  # Linux 补充：Docker socket 挂载
+├── shared-skills/            # 共享技能目录（Git 追踪，所有实例共用）
 ├── scripts/
 │   ├── init.sh               # Linux/macOS 初始化
-│   └── init.ps1              # Windows 初始化
+│   ├── init.ps1              # Windows 初始化
+│   ├── cleanup.sh            # Linux/macOS 清除工作区
+│   └── cleanup.ps1           # Windows 清除工作区
 ├── instances/
 │   ├── instance-1/
 │   │   ├── openclaw.json     # 实例 1 独立配置
@@ -91,6 +94,19 @@ openclaw_multi/
 │   └── instance-4/
 └── README.md
 ```
+
+### Skills 管理
+
+所有实例共享同一套 Skills，存放在仓库根目录的 `shared-skills/` 中：
+
+```
+shared-skills/
+├── .gitkeep
+└── <your-skill>/
+    └── SKILL.md
+```
+
+容器以只读方式挂载，宿主机上编辑后自动生效（`watch: true`）。Skills 纳入 Git 版本管理。
 
 ## 配置说明
 
