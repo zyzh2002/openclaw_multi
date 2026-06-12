@@ -40,6 +40,16 @@ docker compose logs -f openclaw-1
 docker compose down
 ```
 
+### 清除工作区
+
+```bash
+# Windows
+.\scripts\cleanup.ps1
+
+# Linux/macOS
+bash scripts/cleanup.sh
+```
+
 ## Architecture
 
 ```
@@ -59,6 +69,7 @@ Key directories:
 - `instances/instance-{1..4}/openclaw.json` — 各实例独立的 Gateway/Model/Channel 配置
 - `instances/instance-{1..4}/workspace/` — 各实例工作空间，Docker volume 挂载为读写
 - `scripts/init.sh` / `scripts/init.ps1` — 跨平台初始化脚本
+- `scripts/cleanup.sh` / `scripts/cleanup.ps1` — 一键清除工作区脚本
 - `docker-compose.linux.yml` — Linux 追加 docker.sock 挂载（沙箱模式需要）
 
 ## Conventions

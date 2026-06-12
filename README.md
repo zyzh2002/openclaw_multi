@@ -191,6 +191,20 @@ docker compose down
 docker compose -f docker-compose.yml -f docker-compose.linux.yml up -d
 ```
 
+### 一键清除工作区
+
+清除所有实例 workspace 中的运行时数据（保留 `.gitkeep`）：
+
+```bash
+# Windows
+.\scripts\cleanup.ps1
+
+# Linux / macOS
+bash scripts/cleanup.sh
+```
+
+建议在 `docker compose down` 后执行。
+
 ## 隔离维度
 
 | 维度 | 实现方式 |
