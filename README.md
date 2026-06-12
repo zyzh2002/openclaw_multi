@@ -6,7 +6,7 @@
 
 - **Windows**: [Docker Desktop](https://www.docker.com/get-started) (含 Docker Compose)
 - **Linux**: Docker Engine 26+ + Docker Compose v2
-- 至少 8GB 磁盘空间 + 8GB 可用内存（4 实例 × 2GB）
+- 至少 4GB 可用内存（4 实例 × 512MB）
 
 ## 快速开始
 
@@ -213,7 +213,7 @@ bash scripts/cleanup.sh
 | 网络 | Docker bridge 网络，仅暴露 Web 端口 |
 | 工具执行 | Agent 沙箱子容器 (`OPENCLAW_SANDBOX=1`) |
 | 配置 | 独立 `openclaw.json`，模型/Key 完全分离 |
-| 资源 | CPU/内存限制 (`cpus: 2.0, memory: 2G`) |
+| 资源 | CPU/内存限制 (`cpus: 1.0, memory: 512M, reservations: 256M`) |
 
 ## 许可证
 

@@ -10,6 +10,7 @@ services:
       - ./instances/instance-1/workspace:/home/node/.openclaw/workspace
     environment:
       - OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX:-1}
+      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN_1:-openclaw-1-token}
       - HTTP_PROXY=${HTTP_PROXY_URL:-}
       - HTTPS_PROXY=${HTTPS_PROXY_URL:-}
       - ALL_PROXY=${ALL_PROXY_URL:-}
@@ -19,8 +20,11 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "2.0"
-          memory: 2G
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          cpus: "0.5"
+          memory: 256M
     networks:
       - openclaw-net
 
@@ -35,6 +39,7 @@ services:
       - ./instances/instance-2/workspace:/home/node/.openclaw/workspace
     environment:
       - OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX:-1}
+      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN_2:-openclaw-2-token}
       - HTTP_PROXY=${HTTP_PROXY_URL:-}
       - HTTPS_PROXY=${HTTPS_PROXY_URL:-}
       - ALL_PROXY=${ALL_PROXY_URL:-}
@@ -44,8 +49,11 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "2.0"
-          memory: 2G
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          cpus: "0.5"
+          memory: 256M
     networks:
       - openclaw-net
 
@@ -60,6 +68,7 @@ services:
       - ./instances/instance-3/workspace:/home/node/.openclaw/workspace
     environment:
       - OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX:-1}
+      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN_3:-openclaw-3-token}
       - HTTP_PROXY=${HTTP_PROXY_URL:-}
       - HTTPS_PROXY=${HTTPS_PROXY_URL:-}
       - ALL_PROXY=${ALL_PROXY_URL:-}
@@ -69,8 +78,11 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "2.0"
-          memory: 2G
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          cpus: "0.5"
+          memory: 256M
     networks:
       - openclaw-net
 
@@ -85,6 +97,7 @@ services:
       - ./instances/instance-4/workspace:/home/node/.openclaw/workspace
     environment:
       - OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX:-1}
+      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN_4:-openclaw-4-token}
       - HTTP_PROXY=${HTTP_PROXY_URL:-}
       - HTTPS_PROXY=${HTTPS_PROXY_URL:-}
       - ALL_PROXY=${ALL_PROXY_URL:-}
@@ -94,8 +107,11 @@ services:
     deploy:
       resources:
         limits:
-          cpus: "2.0"
-          memory: 2G
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          cpus: "0.5"
+          memory: 256M
     networks:
       - openclaw-net
 
