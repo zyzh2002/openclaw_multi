@@ -71,6 +71,11 @@ Key directories:
 - `scripts/init.sh` / `scripts/init.ps1` — 跨平台初始化脚本
 - `scripts/cleanup.sh` / `scripts/cleanup.ps1` — 一键清除工作区脚本
 - `docker-compose.linux.yml` — Linux 追加 docker.sock 挂载（沙箱模式需要）
+- `.github/skills/openclaw-mcp-config/` — Skill：粘贴 MCP 服务器 JSON，自动写入 4 个实例
+
+## Skills
+
+- **openclaw-mcp-config** — 用户粘贴描述 MCP 服务器的 JSON 代码块，Agent 自动解析、检测敏感值、并合并写入 4 个实例的 `openclaw.json`。触发：「添加 MCP 服务器」「配置 MCP」「为所有实例加 MCP」。
 
 ## Conventions
 
