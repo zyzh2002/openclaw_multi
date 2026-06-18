@@ -42,7 +42,7 @@ ALL_PROXY_URL=socks5://host.docker.internal:1080
 
 编辑各实例的模型配置：
 
-```
+```text
 instances/instance-{1..4}/openclaw.json
 ```
 
@@ -67,15 +67,15 @@ docker compose -f docker-compose.yml -f docker-compose.linux.yml up -d
 Web 面板使用统一 Token 认证，默认 Token 来自 `.env`：`OPENCLAW_GATEWAY_TOKEN=openclaw123`。
 
 | 实例 | 地址 |
-|------|------|
-| instance-1 | http://localhost:18789 |
-| instance-2 | http://localhost:18790 |
-| instance-3 | http://localhost:18791 |
-| instance-4 | http://localhost:18792 |
+| --- | --- |
+| instance-1 | <http://localhost:18789> |
+| instance-2 | <http://localhost:18790> |
+| instance-3 | <http://localhost:18791> |
+| instance-4 | <http://localhost:18792> |
 
 ## 目录结构
 
-```
+```text
 openclaw_multi/
 ├── .env.example              # 环境变量模板（复制为 .env）
 ├── docker-compose.yml        # 基础编排（跨平台通用）
@@ -100,7 +100,7 @@ openclaw_multi/
 
 所有实例共享同一套 Skills，存放在仓库根目录的 `shared-skills/` 中：
 
-```
+```text
 shared-skills/
 ├── .gitkeep
 └── <your-skill>/
@@ -230,7 +230,7 @@ bash scripts/cleanup.sh
 ## 隔离维度
 
 | 维度 | 实现方式 |
-|------|---------|
+| --- | --- |
 | 文件系统 | 每实例独立 volume，workspace 互不可见 |
 | 网络 | Docker bridge 网络，仅暴露 Web 端口 |
 | 工具执行 | Agent 沙箱子容器 (`OPENCLAW_SANDBOX=1`) |

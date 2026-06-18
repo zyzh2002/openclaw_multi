@@ -52,7 +52,7 @@ bash scripts/cleanup.sh
 
 ## Architecture
 
-```
+```text
 Host (Windows/Linux)
 ├── Docker Compose
 │   ├── openclaw-net (bridge network)

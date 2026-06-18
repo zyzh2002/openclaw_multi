@@ -13,7 +13,7 @@ if (-not $docker) {
 }
 
 # Check if Docker is running
-$dockerInfo = docker info 2>&1
+docker info *> $null
 if ($LASTEXITCODE -ne 0) {
     Write-Error "错误: Docker Desktop 未运行，请先启动 Docker Desktop"
     exit 1
