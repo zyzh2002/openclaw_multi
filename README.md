@@ -6,7 +6,7 @@
 
 - **Windows**: [Docker Desktop](https://www.docker.com/get-started) (含 Docker Compose)
 - **Linux**: Docker Engine 26+ + Docker Compose v2
-- 至少 4GB 可用内存（4 实例 × 512MB）
+- 至少 4GB 可用内存（4 实例 × 1GB 容器限制；建议宿主机预留额外内存）
 
 ## 快速开始
 
@@ -32,9 +32,10 @@ bash scripts/init.sh
 
 ### 3. 配置
 
-编辑 `.env` 填入代理地址（如需要）：
+编辑 `.env` 确认统一 Web 面板 Token，并填入代理地址（如需要）：
 
 ```env
+OPENCLAW_GATEWAY_TOKEN=openclaw123
 HTTP_PROXY_URL=http://host.docker.internal:7890
 ALL_PROXY_URL=socks5://host.docker.internal:1080
 ```
@@ -63,7 +64,7 @@ docker compose -f docker-compose.yml -f docker-compose.linux.yml up -d
 
 ### 5. 访问 Web 面板
 
-统一 Token：`openclaw123`
+Web 面板使用统一 Token 认证，默认 Token 来自 `.env`：`OPENCLAW_GATEWAY_TOKEN=openclaw123`。
 
 | 实例 | 地址 |
 |------|------|
@@ -120,8 +121,11 @@ shared-skills/
 {
   "gateway": {
     "port": 18789,
-    "bind": "0.0.0.0",
-    "auth": {}  // 空对象 = 禁用 Web 面板认证
+    "bind": "lan",
+    "mode": "local",
+    "auth": {
+      "mode": "token"
+    }
   },
   "agents": {
     "defaults": {
@@ -162,6 +166,8 @@ shared-skills/
   }
 }
 ```
+
+Gateway Token 不写入 `openclaw.json`，统一由 `.env` 中的 `OPENCLAW_GATEWAY_TOKEN` 提供，默认值为 `openclaw123`。
 
 ### 代理配置
 
@@ -228,8 +234,8 @@ bash scripts/cleanup.sh
 | 文件系统 | 每实例独立 volume，workspace 互不可见 |
 | 网络 | Docker bridge 网络，仅暴露 Web 端口 |
 | 工具执行 | Agent 沙箱子容器 (`OPENCLAW_SANDBOX=1`) |
-| 配置 | 独立 `openclaw.json`，模型/Key 完全分离 |
-| 资源 | CPU/内存限制 (`cpus: 1.0, memory: 512M, reservations: 256M`) |
+| 配置 | 独立 `openclaw.json`，模型/Key 完全分离；Gateway Token 由 `.env` 统一提供 |
+| 资源 | CPU/内存限制 (`cpus: 1.0, memory: 1G, reservations: 256M`) |
 
 ## 许可证
 

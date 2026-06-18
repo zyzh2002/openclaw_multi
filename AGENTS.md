@@ -3,7 +3,7 @@
 ## Project
 
 - **Name:** openclaw_multi
-- **Description:** OpenClaw 多实例 Docker 隔离部署方案，4 个独立实例共享宿主机代理，Web 面板无认证。
+- **Description:** OpenClaw 多实例 Docker 隔离部署方案，4 个独立实例共享宿主机代理，Web 面板使用统一 Token 认证。
 
 ## Commands
 
@@ -75,7 +75,7 @@ Key directories:
 ## Conventions
 
 - 实例数量固定为 4，端口连续映射 (18789~18792)
-- Web 面板无认证 (`gateway.auth: {}`)
+- Web 面板使用统一 Token 认证，Token 由 `.env` 的 `OPENCLAW_GATEWAY_TOKEN` 提供，默认 `openclaw123`
 - 代理统一配置在 `.env`，不提交
 - `workspace/` 运行时数据被 `.gitignore` 忽略
 - `.env` 从 `.env.example` 复制生成，不提交

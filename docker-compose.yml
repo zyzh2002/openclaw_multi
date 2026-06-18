@@ -11,7 +11,7 @@ services:
       - ./shared-skills:/home/node/.openclaw/shared-skills:ro
     environment:
       - OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX:-1}
-      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN_1:-openclaw-1-token}
+      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN:-openclaw123}
       - HTTP_PROXY=${HTTP_PROXY_URL:-}
       - HTTPS_PROXY=${HTTPS_PROXY_URL:-}
       - ALL_PROXY=${ALL_PROXY_URL:-}
@@ -22,7 +22,7 @@ services:
       resources:
         limits:
           cpus: "1.0"
-          memory: 512M
+          memory: 1G
         reservations:
           cpus: "0.5"
           memory: 256M
@@ -41,7 +41,7 @@ services:
       - ./shared-skills:/home/node/.openclaw/shared-skills:ro
     environment:
       - OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX:-1}
-      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN_2:-openclaw-2-token}
+      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN:-openclaw123}
       - HTTP_PROXY=${HTTP_PROXY_URL:-}
       - HTTPS_PROXY=${HTTPS_PROXY_URL:-}
       - ALL_PROXY=${ALL_PROXY_URL:-}
@@ -52,7 +52,7 @@ services:
       resources:
         limits:
           cpus: "1.0"
-          memory: 512M
+          memory: 1G
         reservations:
           cpus: "0.5"
           memory: 256M
@@ -71,7 +71,7 @@ services:
       - ./shared-skills:/home/node/.openclaw/shared-skills:ro
     environment:
       - OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX:-1}
-      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN_3:-openclaw-3-token}
+      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN:-openclaw123}
       - HTTP_PROXY=${HTTP_PROXY_URL:-}
       - HTTPS_PROXY=${HTTPS_PROXY_URL:-}
       - ALL_PROXY=${ALL_PROXY_URL:-}
@@ -82,7 +82,7 @@ services:
       resources:
         limits:
           cpus: "1.0"
-          memory: 512M
+          memory: 1G
         reservations:
           cpus: "0.5"
           memory: 256M
@@ -101,7 +101,7 @@ services:
       - ./shared-skills:/home/node/.openclaw/shared-skills:ro
     environment:
       - OPENCLAW_SANDBOX=${OPENCLAW_SANDBOX:-1}
-      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN_4:-openclaw-4-token}
+      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN:-openclaw123}
       - HTTP_PROXY=${HTTP_PROXY_URL:-}
       - HTTPS_PROXY=${HTTPS_PROXY_URL:-}
       - ALL_PROXY=${ALL_PROXY_URL:-}
@@ -112,7 +112,7 @@ services:
       resources:
         limits:
           cpus: "1.0"
-          memory: 512M
+          memory: 1G
         reservations:
           cpus: "0.5"
           memory: 256M

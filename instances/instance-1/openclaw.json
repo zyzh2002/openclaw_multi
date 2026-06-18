@@ -4,8 +4,7 @@
     "bind": "lan",
     "mode": "local",
     "auth": {
-      "mode": "token",
-      "token": "openclaw123"
+      "mode": "token"
     }
   },
   "skills": {
